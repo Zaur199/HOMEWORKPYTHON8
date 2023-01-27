@@ -30,8 +30,11 @@ def actions_complex(num_1: str, num_2: str, action: str):
         result = complex(num_1) * complex(num_2)
         return result
     elif action == '/':
-        result = complex(num_1) / complex(num_2)
-        return result
+        if complex(num_2) == 0:
+            print("На ноль делить нельзя!!!")
+        else:
+            result = complex(num_1) / complex(num_2)
+            return result
     else:
         print(f"Вы ввели не корректные данные: {action}, начните сначала")
         action = input("Введите знак действия (+, -, *, /): ")
